@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to the IETE Students' Forum of SIESGST</title>
+    <link rel="stylesheet" href="styles.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+    .press-start-2p-regular {
+        font-family: "Press Start 2P", system-ui;
+        font-weight: 50;
+        font-style: normal;
+        }
+    *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        scroll-behavior: smooth;
+        background: #000000; /* pitch black */
+        color: #c2ffe1;
+    }
+    
+    .preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: #0f1a0e;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+      text-align: center;
+    }
+
+    /* Video stays centered & responsive */
+    .preloader video {
+      max-width: 70%;
+      max-height: 50%;
+      object-fit: contain;
+    }
+    
+
+    /* Hacker-style glitch text */
+    .glitch {
+      font-size: 1.6rem;
+      position: relative;
+      color: #00ff88;
+      text-shadow: 0 0 2px #00ff88;
+      animation: glitch 6s infinite;
+    }
+    /* Glitch keyframes (only active briefly) */
+    @keyframes glitch {
+      0%, 92%, 100% { 
+        text-shadow: 0 0 2px #00ff88; 
+        transform: none; 
+      }
+      93% {
+        text-shadow: -2px 0 red, 2px 0 blue;
+        transform: skewX(5deg);
+      }
+      94% {
+        text-shadow: 2px 0 red, -2px 0 blue;
+        transform: skewX(-5deg);
+      }
+      95% {
+        text-shadow: -1px 0 red, 1px 0 blue;
+        transform: none;
+      }
+    }
+
+    /* Fade out preloader after video ends */
+    .preloader.hidden {
+      opacity: 0;
+      transition: opacity 1s ease;
+      pointer-events: none;
+    }
+
+    section {
+      display: none; /* Hide all sections initially */
+    }
+
+
+    </style>
+</head>
+<body>
+  <div class="preloader" id="preloader">
+    <h2 class="glitch">>> Establishing Uplink</h2>
+    <video id="preloaderVideo" autoplay muted playsinline>
+      <source src="preloader.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <h2 class="glitch">Awesomeness Loading...</h2>
+  </div>
+<div style="display:none;" id="mainContent">
+  <section id="landing">
+  <!-- Main content (hidden until preloader fades) 
+   style="display:none; text-align:center;" id="mainContent" add this back in when-->
+    <div class="press-start-2p-regular">
+        <div class="page">
+            <div class="left">
+                
+                <div class="page">
+                  <div class="left">
+                    <video class="spinning-circle" style="overflow-y: visible;" autoplay muted loop>
+                    <source src="centrecircle.mp4" type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="right" style="max-height: 65vh; overflow-y: visible; margin-top: 10%;">
+                    <a href="#" onclick="showSection('about', event)">
+                        <div class="long-right-hud-wrap">
+                            <!-- HUD FRAME -->
+                            <svg viewBox="0 0 768 1152" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+                            <path class="long-right-neon-stroke" d="M112 88 L664 88 L696 120 L696 820 L660 858 L660 998 L630 1040 L140 1040 L112 1012 L112 716 L144 676 L144 474 L112 428 L112 120 Z"
+                                    fill="none" stroke="#4c918f" stroke-width="8"/>
+                            <path class="long-right-neon-stroke" d="M136 116 L640 116 L668 144 L668 808 L636 842 L636 988 L618 1018 L152 1018 L136 1002 L136 712 L168 672 L168 468 L136 424 L136 144 Z"
+                                    fill="none" stroke="#4c918f" stroke-opacity=".75" stroke-width="6"/>
+                            <!-- Notch and elements -->
+                            <g>
+                                <path d="M296 104 L472 104 L508 150 L260 150 Z" fill="#4c918f"/>
+                                <path d="M312 120 L456 120 L476 150 L292 150 Z" fill="#c2ffe1" opacity=".6"/>
+                            </g>
+                            <g opacity=".95">
+                                <rect x="648" y="536" width="12" height="292" rx="2" fill="#4c918f"/>
+                                <rect x="628" y="556" width="12" height="332" rx="2" fill="#4c918f" opacity=".9"/>
+                                <rect x="608" y="576" width="12" height="372" rx="2" fill="#4c918f" opacity=".85"/>
+                            </g>
+                            <g>
+                                <polygon points="128,1048 176,1048 160,1080 144,1080" fill="#c2ffe1"/>
+                                <polygon points="188,1048 236,1048 220,1080 204,1080" fill="#c2ffe1"/>
+                                <polygon points="248,1048 296,1048 280,1080 264,1080" fill="#c2ffe1"/>
+                                <polygon points="308,1048 356,1048 340,1080 324,1080" fill="#c2ffe1"/>
+                            </g>
+                            <g stroke="#4c918f" stroke-width="6" fill="none" class="long-right-neon-stroke">
+                                <path d="M164 116 h148"/>
+                                <path d="M164 116 v240"/>
+                                <path d="M164 580 v60"/>
+                            </g>
+                            <circle cx="312" cy="116" r="10" fill="#c2ffe1"/>
+                            <circle cx="164" cy="360" r="10" fill="#c2ffe1"/>
+                            <circle cx="164" cy="610" r="10" fill="#c2ffe1"/>
+                            <rect x="648" y="128" width="24" height="84" rx="10" fill="#4c918f"/>
+                            </svg>
+
+                            <!-- Inner simple frosted panel -->
+                            <div class="long-right-glass">
+                            <div class="long-right-scroll ibm-plex-mono-medium" style="font-size: larger;">
+                            <p> What is the IETE Students' Forum? What does it do? Click to find out more about us.</p>
+                            </div>
+                            </div>
+                        </div></a>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <!--This will contain the vertical huds side by side -->
+                <div class="page">
+                    <div class="left">
+                      <a href="#" onclick="showSection('membership', event)">
+                          <center><div class="long-left-hud-wrap">
+                            <!-- HUD FRAME -->
+                            <svg viewBox="0 0 768 1152" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+                            <path class="long-left-neon-stroke" d="M112 88 L664 88 L696 120 L696 820 L660 858 L660 998 L630 1040 L140 1040 L112 1012 L112 716 L144 676 L144 474 L112 428 L112 120 Z"
+                                    fill="none" stroke="#4c918f" stroke-width="8"/>
+                            <path class="long-left-neon-stroke" d="M136 116 L640 116 L668 144 L668 808 L636 842 L636 988 L618 1018 L152 1018 L136 1002 L136 712 L168 672 L168 468 L136 424 L136 144 Z"
+                                    fill="none" stroke="#4c918f" stroke-opacity=".75" stroke-width="6"/>
+                            <!-- Notch and elements -->
+                            <g>
+                                <path d="M296 104 L472 104 L508 150 L260 150 Z" fill="#4c918f"/>
+                                <path d="M312 120 L456 120 L476 150 L292 150 Z" fill="#c2ffe1" opacity=".6"/>
+                            </g>
+                            <g opacity=".95">
+                                <rect x="648" y="536" width="12" height="292" rx="2" fill="#4c918f"/>
+                                <rect x="628" y="556" width="12" height="332" rx="2" fill="#4c918f" opacity=".9"/>
+                                <rect x="608" y="576" width="12" height="372" rx="2" fill="#4c918f" opacity=".85"/>
+                            </g>
+                            <g>
+                                <polygon points="128,1048 176,1048 160,1080 144,1080" fill="#c2ffe1"/>
+                                <polygon points="188,1048 236,1048 220,1080 204,1080" fill="#c2ffe1"/>
+                                <polygon points="248,1048 296,1048 280,1080 264,1080" fill="#c2ffe1"/>
+                                <polygon points="308,1048 356,1048 340,1080 324,1080" fill="#c2ffe1"/>
+                            </g>
+                            <g stroke="#4c918f" stroke-width="6" fill="none" class="long-left-neon-stroke">
+                                <path d="M164 116 h148"/>
+                                <path d="M164 116 v240"/>
+                                <path d="M164 580 v60"/>
+                            </g>
+                            <circle cx="312" cy="116" r="10" fill="#c2ffe1"/>
+                            <circle cx="164" cy="360" r="10" fill="#c2ffe1"/>
+                            <circle cx="164" cy="610" r="10" fill="#c2ffe1"/>
+                            <rect x="648" y="128" width="24" height="84" rx="10" fill="#4c918f"/>
+                            </svg>
+
+                            <!-- Inner simple frosted panel -->
+                            <div class="long-left-glass">
+                            <div class="long-left-scroll ibm-plex-mono-medium" style="font-size: larger;">
+                                <p>Want to become a member? Find out what it means to be a member of IETE here</p>
+                            </div>
+                            </div>
+                        </div></center></a>
+                    </div>
+                    <div class="right" style="margin-left: 5%;">
+                      
+                        <div class="long-right-hud-wrap"><a href="#" onclick="showSection('events', event)">
+                            <!-- HUD FRAME -->
+                            <svg viewBox="0 0 768 1152" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+                            <path class="long-right-neon-stroke" d="M112 88 L664 88 L696 120 L696 820 L660 858 L660 998 L630 1040 L140 1040 L112 1012 L112 716 L144 676 L144 474 L112 428 L112 120 Z"
+                                    fill="none" stroke="#4c918f" stroke-width="8"/>
+                            <path class="long-right-neon-stroke" d="M136 116 L640 116 L668 144 L668 808 L636 842 L636 988 L618 1018 L152 1018 L136 1002 L136 712 L168 672 L168 468 L136 424 L136 144 Z"
+                                    fill="none" stroke="#4c918f" stroke-opacity=".75" stroke-width="6"/>
+                            <!-- Notch and elements -->
+                            <g>
+                                <path d="M296 104 L472 104 L508 150 L260 150 Z" fill="#4c918f"/>
+                                <path d="M312 120 L456 120 L476 150 L292 150 Z" fill="#c2ffe1" opacity=".6"/>
+                            </g>
+                            <g opacity=".95">
+                                <rect x="648" y="536" width="12" height="292" rx="2" fill="#4c918f"/>
+                                <rect x="628" y="556" width="12" height="332" rx="2" fill="#4c918f" opacity=".9"/>
+                                <rect x="608" y="576" width="12" height="372" rx="2" fill="#4c918f" opacity=".85"/>
+                            </g>
+                            <g>
+                                <polygon points="128,1048 176,1048 160,1080 144,1080" fill="#c2ffe1"/>
+                                <polygon points="188,1048 236,1048 220,1080 204,1080" fill="#c2ffe1"/>
+                                <polygon points="248,1048 296,1048 280,1080 264,1080" fill="#c2ffe1"/>
+                                <polygon points="308,1048 356,1048 340,1080 324,1080" fill="#c2ffe1"/>
+                            </g>
+                            <g stroke="#4c918f" stroke-width="6" fill="none" class="long-right-neon-stroke">
+                                <path d="M164 116 h148"/>
+                                <path d="M164 116 v240"/>
+                                <path d="M164 580 v60"/>
+                            </g>
+                            <circle cx="312" cy="116" r="10" fill="#c2ffe1"/>
+                            <circle cx="164" cy="360" r="10" fill="#c2ffe1"/>
+                            <circle cx="164" cy="610" r="10" fill="#c2ffe1"/>
+                            <rect x="648" y="128" width="24" height="84" rx="10" fill="#4c918f"/>
+                            </svg>
+
+                            <!-- Inner simple frosted panel -->
+                            <div class="long-right-glass">
+                            <div class="long-right-scroll ibm-plex-mono-medium" style="font-size: larger;">
+                                <p>We conduct a few events annually. Click here to know what they are.</p>
+                            </div>
+                            </div>
+                        </div></a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="second-part">
+          
+            <div class="row">
+              <div class="left">
+                <div class="bottom-text">
+          <h3> >> Uplink Established</h3><br>
+          <h5>Welcome to the IETE Students' Forum of SIESGST</h5>
+            </div>
+              </div>
+              <div class="right">
+                <div class="row">
+                  <div class="three-left">
+                    <div class="square-hud-wrap">
+    <!-- SVG Square Frame -->
+    <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+      <rect x="20" y="20" width="460" height="460" 
+            fill="none" 
+            stroke="#4c918f" 
+            stroke-width="6" 
+            class="square-hud-stroke"/>
+      <!-- Accent details -->
+      <circle cx="50" cy="50" r="8" fill="#c2ffe1"/>
+      <circle cx="450" cy="50" r="8" fill="#c2ffe1"/>
+      <circle cx="50" cy="450" r="8" fill="#c2ffe1"/>
+      <circle cx="450" cy="450" r="8" fill="#c2ffe1"/>
+    </svg>
+
+    <!-- Glass content area -->
+         <div class="square-hud-glass ibm-plex-mono-medium" style="font-size: x-small">
+      <p>Built with &#9829 by IETE Web Team</p>
+      
+    </div>
+  </div>
+
+
+                  </div>
+                  <div class="three-center">
+                    <div class="square-hud-wrap">
+    <!-- SVG Square Frame -->
+    <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+      <rect x="20" y="20" width="460" height="460" 
+            fill="none" 
+            stroke="#4c918f" 
+            stroke-width="6" 
+            class="square-hud-stroke"/>
+      <!-- Accent details -->
+      <circle cx="50" cy="50" r="8" fill="#c2ffe1"/>
+      <circle cx="450" cy="50" r="8" fill="#c2ffe1"/>
+      <circle cx="50" cy="450" r="8" fill="#c2ffe1"/>
+      <circle cx="450" cy="450" r="8" fill="#c2ffe1"/>
+    </svg>
+
+    <!-- Glass content area -->
+     <a href="#" onclick="showSection('contact', event)">
+      
+     <div class="square-hud-glass ibm-plex-mono-medium" style="font-size: x-small">
+      <p>Contact Us</p>
+    </div>
+  </div>
+                  </div>
+                  <div class="three-right">
+                    <div class="square-hud-wrap">
+    <!-- SVG Square Frame -->
+    <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+      <rect x="20" y="20" width="460" height="460" 
+            fill="none" 
+            stroke="#4c918f" 
+            stroke-width="6" 
+            class="square-hud-stroke"/>
+      <!-- Accent details -->
+      <circle cx="50" cy="50" r="8" fill="#c2ffe1"/>
+      <circle cx="450" cy="50" r="8" fill="#c2ffe1"/>
+      <circle cx="50" cy="450" r="8" fill="#c2ffe1"/>
+      <circle cx="450" cy="450" r="8" fill="#c2ffe1"/>
+    </svg>
+</a>
+    <!-- Glass content area -->
+<a href="#" onclick="showSection('team', event)">
+    <div class="square-hud-glass ibm-plex-mono-medium">
+      <p>View Our Team</p>
+    
+    </div>
+  </div>
+  
+</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+        </div>
+      </div>
+      </section>
+      <section id="about">
+        <nav id="commonNavbar" class="common-navbar press-start-2p-regular">
+  <ul class="common-nav-list">
+    <li><a href="#" class="common-nav-link" onclick="showSection('landing', event)">Home</a></li><br>
+    <li><a href="#" class="common-nav-link" onclick="showSection('about', event)">About</a></li><br>
+    <li><a href="#" class="common-nav-link" onclick="showSection('events', event)">Events</a></li><br>
+    <li><a href="#" class="common-nav-link" onclick="showSection('membership', event)">Membership</a></li><br>
+    <li><a href="#" class="common-nav-link" onclick="showSection('team', event)">Our Team</a></li><br>
+    <li><a href="#" class="common-nav-link" onclick="showSection('contact', event)">Contact</a></li>
+  </ul>
+  <!-- Mobile Toggle -->
+  <button class="common-nav-toggle" aria-label="Toggle Menu">☰</button>
+</nav>
+
+        <div class="about-hud-wrapper">
+    <!-- HUD frame -->
+    <svg class="about-hud-frame" viewBox="0 0 650 420" preserveAspectRatio="none">
+      <polygon class="about-hud-border-glow"
+        points="40,0 650,0 650,380 610,420 0,420 0,40" />
+      <polygon class="about-hud-border"
+        points="40,0 650,0 650,380 610,420 0,420 0,40" />
+      <!-- Moving scanline -->
+      <line class="scanline" x1="0" y1="0" x2="0" y2="420" />
+    </svg>
+
+    <!-- Animated glowing corner brackets -->
+    <div class="corner tl"></div>
+    <div class="corner tr"></div>
+    <div class="corner bl"></div>
+    <div class="corner br"></div>
+
+    <!-- Content -->
+    <div class="about-hud-content">
+      <h3 class="about-hud-title press-start-2p-regular">About IETE Students' Forum of SIESGST</h3>
+      <p class="about-hud-text">
+        The IETE Students' Forum of SIES GST, Nerul, was inaugurated in March 2008. 
+            This Student Chapter plays an active role in organizing extra-curricular events 
+            for the college. ISF believes in originality and has strived to always incorporate 
+            new and innovative ideas in all projects and activities. 
+            Our motto is to encourage 
+            teamwork and the spark to wander into newer and unexplored territories in our 
+            student members. 
+            <br><br>
+            The major events held under the banner of ISF are Techxter- 
+            A national level technical paper presentation competition; Ideation- An idea 
+            presentation competition; Bootcamps on various topics; Seminars- on upcoming 
+            technologies. ISF organized an Idea presentation competition in collaboration 
+            with various NGOs. In this competition, students were given various problem 
+            statements pertaining to various social issues faced by them. 
+            <br><br>
+            ISF also conducted 
+            a Bootcamp to ISME, One Indiabulls, Parel. Topics such as Data Science, Design 
+            Thinking etc. were discussed in this Bootcamp by experts from various fields. 
+            <br> <br>
+            Apart from competitions, ISF organizes workshops on trending technologies to 
+            expose students to concepts and tools apart from the prescribed syllabus. 
+            Workshops such as GitHub, ML, Python etc. were conducted. <br><br>
+        <b>Our Aims and objectives :</b><br>
+        ‣ To plan, organize Technical Programs, Special Lectures, Workshops, Seminars, 
+            Symposia, exhibitions for the benefit of students. <br>
+            ‣ To provide a common platform for students to exchange ideas in technical topics 
+            of interest, e.g., curriculum, employment, higher educational opportunities, 
+            emerging trends, etc.<br>
+            ‣ To facilitate technical visits, project works, employment, contact with industries 
+            and academic institutions.<br>
+            ‣ Encourage team spirit and self-reliance among student members.</p>
+    </div>
+  </div>
+      </section>
+      <section id="events">
+        <nav id="commonNavbar" class="common-navbar press-start-2p-regular">
+  <ul class="common-nav-list">
+    <li><a href="#" class="common-nav-link" onclick="showSection('landing', event)">Home</a></li><br>
+    <li><a href="#" class="common-nav-link" onclick="showSection('about', event)">About</a></li><br>
+    <li><a href="#" class="common-nav-link" onclick="showSection('events', event)">Events</a></li><br>
+    <li><a href="#" class="common-nav-link" onclick="showSection('membership', event)">Membership</a></li><br>
+    <li><a href="#" class="common-nav-link" onclick="showSection('team', event)">Our Team</a></li><br>
+    <li><a href="#" class="common-nav-link" onclick="showSection('contact', event)">Contact</a></li>
+  </ul>
+  <!-- Mobile Toggle -->
+  <button class="common-nav-toggle" aria-label="Toggle Menu">☰</button>
+</nav>
+        <h3 class="about-hud-title_2 press-start-2p-regular">Events</h3>
+        <div class="carousel-container">
+    <button class="nav-btn nav-left">&#10094;</button>
+    <button class="nav-btn nav-right">&#10095;</button>
+
+    <div class="carousel-panel active">
+      <div class="event-hud-wrapper">
+        <svg class="event-hud-frame" viewBox="0 0 650 420" preserveAspectRatio="none">
+          <polygon class="event-hud-border-glow" points="40,0 650,0 650,380 610,420 0,420 0,40"/>
+          <polygon class="event-hud-border" points="40,0 650,0 650,380 610,420 0,420 0,40"/>
+          <line class="scanline" x1="0" y1="0" x2="0" y2="420"/>
+        </svg>
+        <div class="corner tl"></div>
+        <div class="corner tr"></div>
+        <div class="corner bl"></div>
+        <div class="corner br"></div>
+        <div class="event-hud-content">
+          <h2 class="event-hud-title">Ideation</h2>
+          <p class="event-hud-text">Ideation is an ideathon organized by the IETE Students' Forum of SIES Graduate School of Technology. It serves as a platform for enthusiasts to generate creative and technically productive ideas to address real-life problems faced by society. The event encourages aspiring minds and innovators to present solutions ranging from technology-driven concepts to humanitarian initiatives, all aimed at making the world a better place. Its prime motto is to give back to society by solving commonly faced issues through technical ideas, which can be developed into practical projects. Organized in collaboration with NGOs such as the Child Help Foundation, the event focuses on problem statements in domains like environmental issues, sanitation, online safety, mental health, crime, gender discrimination, and natural disaster preparedness. The format typically includes an inauguration ceremony, brainstorming and mentoring sessions, idea presentations, and a valedictory ceremony.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel-panel next">
+      <div class="event-hud-wrapper">
+        <svg class="event-hud-frame" viewBox="0 0 650 420" preserveAspectRatio="none">
+          <polygon class="event-hud-border-glow" points="40,0 650,0 650,380 610,420 0,420 0,40"/>
+          <polygon class="event-hud-border" points="40,0 650,0 650,380 610,420 0,420 0,40"/>
+          <line class="scanline" x1="0" y1="0" x2="0" y2="420"/>
+        </svg>
+        <div class="corner tl"></div>
+        <div class="corner tr"></div>
+        <div class="corner bl"></div>
+        <div class="corner br"></div>
+        <div class="event-hud-content">
+          <h2 class="event-hud-title">Techxter</h2>
+          <p class="event-hud-text">Techxter is a National Level Technical Paper Presentation hosted by the IETE Students' Forum of SIES Graduate School of Technology. Open to students from engineering, polytechnic, and other technical courses, the event provides a platform to present research and innovative ideas across diverse domains. Each edition receives paper submissions from institutions across India, covering various engineering and technology disciplines such as information technology, computer engineering, mechanical engineering, and electronics and telecommunication. Selected papers are presented in a competitive one-day event, featuring participants from both local and outstation colleges. The atmosphere is highly engaging, with discussions on a wide range of technical topics. The judging panel typically includes industry experts and senior faculty from reputed institutions, ensuring fair evaluation and representation of all engineering specialties. The event aims to encourage research culture, knowledge sharing, and innovation among students.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel-panel prev">
+      <div class="event-hud-wrapper">
+        <svg class="event-hud-frame" viewBox="0 0 650 420" preserveAspectRatio="none">
+          <polygon class="event-hud-border-glow" points="40,0 650,0 650,380 610,420 0,420 0,40"/>
+          <polygon class="event-hud-border" points="40,0 650,0 650,380 610,420 0,420 0,40"/>
+          <line class="scanline" x1="0" y1="0" x2="0" y2="420"/>
+        </svg>
+        <div class="corner tl"></div>
+        <div class="corner tr"></div>
+        <div class="corner bl"></div>
+        <div class="corner br"></div>
+        <div class="event-hud-content">
+          <h2 class="event-hud-title">Projexions</h2>
+          <p class="event-hud-text">PROJEXIONS is an annual technical showcase organized by the Department of Information Technology in collaboration with the IETE Students' Forum of SIES Graduate School of Technology. It serves as a platform for final-year IT students to present their work through a poster exhibition and for third-year students to demonstrate their skills via project presentations. The event covers diverse domains, including IoT, Android App Development, Web Development, and Artificial Intelligence, highlighting both technical innovation and social impact. Each domain undergoes evaluation by a panel of IT department faculty members. Participants are assessed on creativity, functionality, design, and the real-world relevance of their work. Winners are selected from each panel, ensuring recognition across all domains. The event typically features over 40 teams, divided into multiple panels for smooth execution. The day begins with a motivational address by the Head of the IT Department, inspiring students to use their skills for the betterment of society. True to this vision, the projects and posters often carry the underlying theme of "Giving back to Society", reflecting a blend of technical advancement and community service. PROJEXIONS not only celebrates student innovation but also fosters teamwork, presentation skills, and industry readiness.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+      </section>
+      <section id="team" class="press-start-2p-regular">
+        <nav id="commonNavbar" class="common-navbar press-start-2p-regular">
+  <ul class="common-nav-list">
+    <li><a href="#" class="common-nav-link" onclick="showSection('landing', event)">Home</a></li><br>
+    <li><a href="#" class="common-nav-link" onclick="showSection('about', event)">About</a></li><br>
+    <li><a href="#" class="common-nav-link" onclick="showSection('events', event)">Events</a></li><br>
+    <li><a href="#" class="common-nav-link" onclick="showSection('membership', event)">Membership</a></li><br>
+    <li><a href="#" class="common-nav-link" onclick="showSection('team', event)">Our Team</a></li><br>
+    <li><a href="#" class="common-nav-link" onclick="showSection('contact', event)">Contact</a></li>
+  </ul>
+  <!-- Mobile Toggle -->
+  <button class="common-nav-toggle" aria-label="Toggle Menu">☰</button>
+</nav>
+<h3 style="text-align: center; padding-top: 4%;">Core Members</h3>
+  <div class="image-row">
+    <img src="teammembers/core/iris.png">
+    <img src="teammembers/core/rajguru.png">
+  </div>
+
+  <div class="image-row">
+    <img src="teammembers/core/aishvarya.png">
+    <img src="teammembers/core/aayush.png">
+    <img src="teammembers/core/shloka.png">
+  </div>
+  <div class="image-row">
+    <img src="teammembers/core/bhoomi.png">
+    <img src="teammembers/core/sahil.png">
+    <img src="teammembers/core/yuvraj.png">
+  </div>
+<h3 style="text-align: center; padding-top: 4%;">TE Active Members</h3>
+  <div class="image-row">
+    <img src="teammembers/extended/active_te/krishn.png">
+    <img src="teammembers/extended/active_te/tiesha.png">
+  </div>
+<h3 style="text-align: center; padding-top: 4%;">SE Active Members</h3>
+<div class="image-row">
+    <img src="teammembers/extended/active_Se/sakshi.png">
+    <img src="teammembers/extended/active_Se/sangini.png">
+  </div>
+  <div class="image-row">
+    <img src="teammembers/extended/active_Se/ayaan.png">
+    <img src="teammembers/extended/active_Se/namrata.png">
+    <img src="teammembers/extended/active_Se/rahul.png">
+  </div>
+  <h3 style="text-align: center; padding-top: 4%;">Web Development Team</h3>
+<div class="image-row">
+    <img src="teammembers/extended/web/sneha.png">
+  </div>
+
+<div class="image-row">
+    <img src="teammembers/extended/web/shlok.png">
+    <img src="teammembers/extended/web/pavithra.png">
+  </div>
+  <div class="image-row">
+    <img src="teammembers/extended/web/kaveesh.png">
+    <img src="teammembers/extended/web/aryan.png">
+  </div>
+  <h3 style="text-align: center; padding-top: 4%;">Data Analytics Team</h3>
+<div class="image-row">
+    <img src="teammembers/extended/da/paras.png">
+  </div>
+
+<div class="image-row">
+    <img src="teammembers/extended/da/pratham.png">
+  </div>
+  <div class="image-row">
+    <img src="teammembers/extended/da/manasvi.png">
+    <img src="teammembers/extended/da/akshata.png">
+    <img src="teammembers/extended/da/akhilesh.png">
+  </div>
+  <h3 style="text-align: center; padding-top: 4%;">App Development Team</h3>
+<div class="image-row">
+    <img src="teammembers/extended/app/niha.png">
+  </div>
+
+<div class="image-row">
+    <img src="teammembers/extended/app/akansha.png">
+    <img src="teammembers/extended/app/shatakshi.png">
+    <img src="teammembers/extended/app/vaibhavi.png">
+  </div>
+<h3 style="text-align: center; padding-top: 4%;">Marketing Team</h3>
+<div class="image-row">
+    <img src="teammembers/extended/marketing/anandraj.png">
+  </div>
+
+<div class="image-row">
+    <img src="teammembers/extended/marketing/niharika.png">
+    <img src="teammembers/extended/marketing/arnav.png">
+    <img src="teammembers/extended/marketing/anushka.png">
+  </div>
+  <div class="image-row">
+    <img src="teammembers/extended/marketing/abhinav.png">
+    <img src="teammembers/extended/marketing/rutik.png">
+    <img src="teammembers/extended/marketing/venisha.png">
+    <img src="teammembers/extended/marketing/venkadesh.png">
+  </div>
+<h3 style="text-align: center; padding-top: 4%;">Public Relations Team</h3>
+<div class="image-row">
+    <img src="teammembers/extended/pr/ayush.png">
+    <img src="teammembers/extended/pr/tazeen.png">
+  </div>
+
+<div class="image-row">
+    <img src="teammembers/extended/pr/janavi.png">
+    <img src="teammembers/extended/pr/prasad.png">
+  </div>
+  <div class="image-row">
+    <img src="teammembers/extended/pr/sampada.png">
+    <img src="teammembers/extended/pr/vighnesh.png">
+    <img src="teammembers/extended/pr/monika.png">
+  </div>
+
+<h3 style="text-align: center; padding-top: 4%;">Social Media Team</h3>
+<div class="image-row">
+    <img src="teammembers/extended/sm/balaji.png">
+    <img src="teammembers/extended/sm/gaurav.png">
+  </div>
+
+<div class="image-row">
+    <img src="teammembers/extended/sm/akash.png">
+    <img src="teammembers/extended/sm/yadnya.png">
+  </div>
+  <div class="image-row">
+    <img src="teammembers/extended/sm/srushti.png">
+    <img src="teammembers/extended/sm/ayush_sm.png">
+  </div>
+  <h3 style="text-align: center; padding-top: 4%;">Design Team</h3>
+<div class="image-row">
+    <img src="teammembers/extended/design/madhavan.png">
+    <img src="teammembers/extended/design/sayali.png">
+  </div>
+  <div class="image-row">
+    <img src="teammembers/extended/design/vaishnavi.png">
+    <img src="teammembers/extended/design/sanskriti.png">
+    <img src="teammembers/extended/design/kalyani.png">
+  </div>
+</section>
+      <section id="membership">
+<nav id="commonNavbar" class="common-navbar press-start-2p-regular">
+  <ul class="common-nav-list">
+    <li><a href="#" class="common-nav-link" onclick="showSection('landing', event)">Home</a></li><br>
+    <li><a href="#" class="common-nav-link" onclick="showSection('about', event)">About</a></li><br>
+    <li><a href="#" class="common-nav-link" onclick="showSection('events', event)">Events</a></li><br>
+    <li><a href="#" class="common-nav-link" onclick="showSection('membership', event)">Membership</a></li><br>
+    <li><a href="#" class="common-nav-link" onclick="showSection('team', event)">Our Team</a></li><br>
+    <li><a href="#" class="common-nav-link" onclick="showSection('contact', event)">Contact</a></li>
+  </ul>
+  <!-- Mobile Toggle -->
+  <button class="common-nav-toggle" aria-label="Toggle Menu">☰</button>
+</nav>
+      <div class="about-hud-wrapper">
+    <!-- HUD frame -->
+    <svg class="about-hud-frame" viewBox="0 0 650 420" preserveAspectRatio="none">
+      <polygon class="about-hud-border-glow"
+        points="40,0 650,0 650,380 610,420 0,420 0,40" />
+      <polygon class="about-hud-border"
+        points="40,0 650,0 650,380 610,420 0,420 0,40" />
+      <!-- Moving scanline -->
+      <line class="scanline" x1="0" y1="0" x2="0" y2="420" />
+    </svg>
+
+    <!-- Animated glowing corner brackets -->
+    <div class="corner tl"></div>
+    <div class="corner tr"></div>
+    <div class="corner bl"></div>
+    <div class="corner br"></div>
+
+    <!-- Content -->
+    <div class="about-hud-content">
+      <h2 class="about-hud-title">Membership of IETE</h2>
+      <p class="about-hud-text">
+         The Institution of Electronics and Telecommunication Engineers (IETE)
+          is a leading professional society in India for electronics,
+          telecommunications, IT, and related technical fields. 
+          <br><br>
+          Established to
+          promote advancements in these domains, IETE serves as a platform for
+          students, academicians, and professionals to exchange ideas, explore
+          emerging technologies, and enhance their technical expertise.
+          <br><br>
+          IETE membership provides students with an excellent opportunity to be
+          part of this prestigious network, offering numerous benefits that
+          foster professional growth, innovation, and learning beyond the
+          classroom. 
+          <br><br>
+          As a member, you gain access to workshops, seminars,
+          technical competitions, and exclusive publications, while connecting
+          with a community that thrives on technology and creativity.
+      </p><br><br><br><br>
+      <h4>Benefits of IETE Membership:</h4><br>
+      <p class="about-hud-text">
+        <ul>
+          <li>
+            Discounts on workshops, seminars, and events conducted by IETE.
+          </li><br>
+          <li>
+            Priority consideration for publishing papers in IETE journals.
+          </li><br>
+          <li>Complimentary subscription to IETE publications.</li><br>
+          <li>
+            Eligibility to join the IETE Council and contribute to
+            decision-making.
+          </li><br>
+          <li>
+            Opportunities to volunteer and network during major IETE events.
+          </li>
+        </ul>
+</p>
+    </div>
+  </div>
+    </section>
+
+      <section id ="contact" class="contactus_3">
+        <nav id="commonNavbar" class="common-navbar press-start-2p-regular">
+  <ul class="common-nav-list">
+    <li><a href="#" class="common-nav-link" onclick="event.preventDefault(); showSection('landing', event)">Home</a></li><br>
+    <li><a href="#" class="common-nav-link" onclick="event.preventDefault(); showSection('about', event)">About</a></li><br>
+    <li><a href="#" class="common-nav-link" onclick="event.preventDefault(); showSection('events', event)">Events</a></li><br>
+    <li><a href="#" class="common-nav-link" onclick="event.preventDefault(); showSection('membership', event)">Membership</a></li><br>
+    <li><a href="#" class="common-nav-link" onclick="event.preventDefault(); showSection('team', event)">Our Team</a></li><br>
+    <li><a href="#" class="common-nav-link" onclick="event.preventDefault(); showSection('contact', event)">Contact</a></li>
+  </ul>
+  <!-- Mobile Toggle -->
+  <button class="common-nav-toggle" aria-label="Toggle Menu">☰</button>
+</nav>
+        <img src="images/earth-cs-removebg-preview.png" class="contactus_3_earth" alt="" />
+        <br><br><br><h1>CONTACT US</h1>
+        <div class="contactus_3_grid">
+
+            <article class="contactus_3_hud">
+                <div class="contactus_3_imgWrapper">
+                    <img class="contactus_3_hudpanel" src="images/hud.png" alt="">
+                    <div class="contactus_3_text">
+                        <img class="contactus_3_icon" src="images/mail-svgrepo-com (1).svg" alt="icon">
+                        <div class="contactus_3_textContent">
+                            <span class="contactus_3_label">Email</span>
+                            <span class="contactus_3_value">
+                                <a href="iete-council@sies.edu.in">iete-council@sies.edu.in</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="contactus_3_hud">
+                <div class="contactus_3_imgWrapper">
+                    <img class="contactus_3_hudpanel" src="images/hud.png" alt="">
+                    <div class="contactus_3_text">
+                        <img class="contactus_3_icon" src="images/instagram-svgrepo-com (1).svg" alt="icon">
+                        <div class="contactus_3_textContent">
+                            <span class="contactus_3_label">Instagram</span>
+                            <span class="contactus_3_value">
+                                <a href="https://www.instagram.com/iete_siesgst?igsh=bmR1NDJjd2IzNTZm">@iete_siesgst</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="contactus_3_hud">
+                <div class="contactus_3_imgWrapper">
+                    <img class="contactus_3_hudpanel" src="images/hud.png" alt="">
+                    <div class="contactus_3_text">
+                        <img class="contactus_3_icon" src="images/linkedin-svgrepo-com (1).svg" alt="icon">
+                        <div class="contactus_3_textContent">
+                            <span class="contactus_3_label">LinkedIn</span>
+                            <span class="contactus_3_value">
+                                <a
+                                    href="https://www.linkedin.com/in/ietesiesgst?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">ietesiesgst</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="contactus_3_hud">
+                <div class="contactus_3_imgWrapper">
+                    <img class="contactus_3_hudpanel" src="images/hud.png" alt="">
+                    <div class="contactus_3_text">
+                        <img class="contactus_3_icon" src="images/globe-svgrepo-com (1).svg" alt="icon">
+                        <div class="contactus_3_textContent">
+                            <span class="contactus_3_label">Website</span>
+                            <span class="contactus_3_value">
+                                <a href="#">iete@example.com</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+        <footer class="contactus_3_footer" style="bottom: 0;">
+            <img style="bottom: 0;" class="rail" src="images/footer.png" alt="">
+            <div style="bottom: 0;" class="tagline">STAY CONNECTED WITH US</div>
+            <img style="bottom: 0;" class="rail" src="images/footer right.png" alt="">
+        </footer>
+    </section>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+</body>
+</html>
