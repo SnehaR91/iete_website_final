@@ -824,6 +824,12 @@ svg.event-hud-frame {
 .corner.bl { bottom: 5px; left: 5px; border-right: none; border-top: none; }
 .corner.br { bottom: 5px; right: 5px; border-left: none; border-top: none; }
 
+    .carousel-panel.active {
+      z-index: 1;
+      opacity: 1;
+      transform: translateX(-50%) scale(0.9);
+    }
+
 }
 
 /* Tablet (≤768px) */
@@ -1174,4 +1180,5 @@ svg.event-hud-frame {
     height: 80%;
   }
 }
+
 
