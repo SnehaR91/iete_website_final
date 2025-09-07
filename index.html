@@ -102,6 +102,17 @@
   <section id="landing">
   <!-- Main content (hidden until preloader fades) 
    style="display:none; text-align:center;" id="mainContent" add this back in when-->
+   <nav id="homecommonNavbar" class="homecommon-navbar press-start-2p-regular">
+  <ul class="homecommon-nav-list">
+    <li><a href="#" class="homecommon-nav-link" onclick="showSection('landing', event)">Home</a></li><br>
+    <li><a href="#" class="homecommon-nav-link" onclick="showSection('about', event)">About</a></li><br>
+    <li><a href="#" class="homecommon-nav-link" onclick="showSection('events', event)">Events</a></li><br>
+    <li><a href="#" class="homecommon-nav-link" onclick="showSection('membership', event)">Membership</a></li><br>
+    <li><a href="#" class="homecommon-nav-link" onclick="showSection('team', event)">Our Team</a></li><br>
+    <li><a href="#" class="homecommon-nav-link" onclick="showSection('contact', event)">Contact</a></li>
+  </ul>
+  <button class="homecommon-nav-toggle" aria-label="Toggle Menu">☰</button>
+</nav>
     <div class="press-start-2p-regular">
         <div class="page">
             <div class="left">
@@ -658,7 +669,7 @@
 
     <!-- Content -->
     <div class="about-hud-content">
-      <h2 class="about-hud-title press-start-2p-regular">Membership of IETE</h2>
+      <h2 class="about-hud-title">Membership of IETE</h2>
       <p class="about-hud-text">
          The Institution of Electronics and Telecommunication Engineers (IETE)
           is a leading professional society in India for electronics,
@@ -792,5 +803,4 @@
     <script src="script.js"></script>
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 </body>
-
 </html>
