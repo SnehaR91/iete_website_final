@@ -812,12 +812,12 @@ svg.event-hud-frame {
   }
 .event-hud-text, .event-hud-title{
   max-width: 90%;
-  max-height: 80%;
+  max-height: 90%;
 } 
 
 .event-hud-content, .event-hud-wrapper{
   max-width: 80%;
-  max-height: 90%;
+  height: 90%;
 }
 .corner.tl { top: 5px; left: 5px; border-right: none; border-bottom: none; }
 .corner.tr { top: 5%; right: 25%; border-left: none; border-bottom: none; }
@@ -1174,3 +1174,4 @@ svg.event-hud-frame {
     height: 80%;
   }
 }
+
