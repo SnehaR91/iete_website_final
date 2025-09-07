@@ -40,6 +40,13 @@ function showSection(sectionId, event) {
   if (event && event.target) {
     event.target.classList.add("active-link");
   }
+  // Update active nav link
+  document.querySelectorAll(".homecommon-nav-link").forEach(link => {
+    link.classList.remove("active-link");
+  });
+  if (event && event.target) {
+    event.target.classList.add("active-link");
+  }
 
   // Close mobile dropdown
  document.querySelectorAll(".common-nav-list").forEach(navList => {
@@ -47,6 +54,12 @@ function showSection(sectionId, event) {
     navList.classList.remove("active");
   }
 });
+ document.querySelectorAll(".homecommon-nav-list").forEach(navList => {
+  if (navList.classList.contains("active")) {
+    navList.classList.remove("active");
+  }
+});
+
 
   // If Events section is shown → init carousel
   if (sectionId === "events") {
@@ -114,6 +127,16 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".common-nav-toggle").forEach((toggleBtn, i) => {
     const navList = toggleBtn.closest("nav").querySelector(".common-nav-list");
+
+    toggleBtn.addEventListener("click", () => {
+      navList.classList.toggle("active");
+    });
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".homecommon-nav-toggle").forEach((toggleBtn, i) => {
+    const navList = toggleBtn.closest("nav").querySelector(".homecommon-nav-list");
 
     toggleBtn.addEventListener("click", () => {
       navList.classList.toggle("active");
