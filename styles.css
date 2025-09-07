@@ -827,7 +827,7 @@ svg.event-hud-frame {
     .carousel-panel.active {
       z-index: 1;
       opacity: 1;
-      transform: translateX(-50%) scale(0.9);
+      transform: translateX(-50%) scale(0.7);
     }
 
 }
@@ -1180,5 +1180,6 @@ svg.event-hud-frame {
     height: 80%;
   }
 }
+
 
 
